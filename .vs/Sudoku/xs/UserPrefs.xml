@@ -1,0 +1,34 @@
+﻿<Properties StartupConfiguration="{9297B31C-154F-4556-AE8A-E6366B01F721}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/Index.cshtml.cs">
+    <Files>
+      <File FileName="Pages/Shared/_Layout.cshtml" Line="5" Column="73" />
+      <File FileName="Pages/Stats.cshtml" Line="39" Column="21" />
+      <File FileName="Pages/Stats.cshtml.cs" Line="65" Column="10" />
+      <File FileName="Pages/Index.cshtml.cs" Line="54" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Sudoku" expanded="True">
+            <Node name="Sudoku" expanded="True">
+              <Node name="Pages" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="Index.cshtml" expanded="True">
+                  <Node name="Index.cshtml.cs" selected="True" />
+                </Node>
+                <Node name="Stats.cshtml" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Sudoku PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

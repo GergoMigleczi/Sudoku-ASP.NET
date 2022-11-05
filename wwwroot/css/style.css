@@ -1,0 +1,256 @@
+﻿
+
+/*UNIVERSAL*/
+body {
+    background-color: lightslategray;
+    font-family: Courier New, Courier, monospace;
+}
+
+h1 {
+    text-align: center;
+    font-family: Courier New, Courier, monospace;
+    font-size: 100px;
+    letter-spacing: 3px;
+}
+
+h6, h5 {
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.block{
+    background-color: white;
+    padding: 20px 0px;
+    margin: 15px auto;
+}
+
+/*HEADER*/
+.header {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px darkgrey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+/*SUDOKU GRID*/
+.flex .left{
+    margin-right: 15%;
+}
+
+.SudokuGrid {
+    box-sizing: border-box;
+    width: 450px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-collapse: collapse;
+}
+
+
+.SudokuCell {
+    box-sizing: border-box;
+    width: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-collapse: collapse;
+    padding: 0px;
+}
+
+.inputCell {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: none;
+    border: none;
+}
+
+.inputCell:hover {
+    background-color: lightgray;
+}
+
+/*GENERATE GRID*/
+.top-margin{
+    margin-top: 40px;
+}
+
+.top-margin div {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.level {
+    width: 100px;
+    cursor: pointer;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px darkgrey;
+    font-weight: bolder;
+    color: dimgrey;
+}
+
+.level:hover {
+    box-shadow: 0px 2px 4px darkgrey;
+    background-color: dimgrey;
+    color: lightgrey;
+}
+
+.level:active {
+    box-shadow: 0px 0px 0px darkgrey;
+    margin-top: 2px;
+    margin-bottom: 9px;
+}
+
+/*ABOUT*/
+.block p{
+    padding: 0px 20px;
+    text-align: justify;
+    font-size: medium;
+}
+
+
+/*STATISTICS PAGE*/
+.filter{
+    width:80%;
+    margin: 0px auto;
+}
+.stat-table {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: solid 2px black;
+    border-color: lightslategray;
+    border-collapse: collapse;
+}
+
+.stat-first-row {
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-collapse: collapse;
+    border-color: lightslategray;
+    background-color: lightsteelblue;
+    font-size: larger;
+    color: white
+}
+.stat-row {
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightslategray;
+    border-collapse: collapse;
+}
+
+/*PHONE*/
+@media (max-width: 740px){
+    h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .SudokuGrid {
+        width: 306px;
+        height: 306px;
+    }
+
+
+    .SudokuCell {
+        width: 34px;
+        height: 34px;
+        box-sizing: border-box;
+    }
+
+    .inputCell{
+        width: 31px;
+        height: 31px;
+        box-sizing: border-box;
+    }
+
+    .top-margin div {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .level{
+        width: 80px;
+    }
+
+    .block p {
+        text-align: left;
+        font-size: 10px;
+    }
+
+    .stats-hide{
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .SudokuGrid {
+        width: 225px;
+        height: 225px;
+    }
+
+
+    .SudokuCell {
+        width: 25px;
+        height: 25px;
+        box-sizing: border-box;
+    }
+
+    .inputCell {
+        width: 22px;
+        height: 22px;
+        box-sizing: border-box;
+    }
+
+    .level {
+        width: 100px;
+    }
+
+    .top-margin{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .block p{
+        text-align: left;
+        font-size: 10px;
+    }
+
+    .stats-hide {
+        display: none;
+    }
+}

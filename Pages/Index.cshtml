@@ -1,0 +1,144 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="header">
+    <h1>Sudoku</h1>
+</div>
+<div class="block">
+    <div class="flex">
+        <div  class="left">
+            <h6>Mistakes = @Model.Mistakes</h6>
+        </div>
+        <div class="right">
+            <h6>Player: @Model.PlayerName</h6>
+        </div>
+    </div>
+    <div>
+        <table class="SudokuGrid">
+
+            @for (int i = 0; i < 9; i++)
+            {
+                if ((i + 1) % 3 == 0 && i != 8)
+                {
+                    <tr>
+                        @for (int j = 0; j < 9; j++)
+                        {
+                            if ((j + 1) % 3 == 0 && j != 8)
+                            {
+                                <td class="SudokuCell" style="border-right-width: 3px; border-bottom-width: 3px">
+                                    @if (Model.Puzzle[i, j] == 0)
+                                    {
+                                        <form>
+                                            <input class="inputCell" type="text" asp-for="cell" value="" onchange="this.form.submit();" />
+                                            <input type="hidden" asp-for="row" value="@i">
+                                            <input type="hidden" asp-for="col" value="@j">
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        @Model.Puzzle[i, j]
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="SudokuCell" style=" border-bottom-width: 3px">
+                                    @if (Model.Puzzle[i, j] == 0)
+                                    {
+                                        <form>
+                                            <input class="inputCell" type="text" asp-for="cell" value="" onchange="this.form.submit();" />
+                                            <input type="hidden" asp-for="row" value="@i">
+                                            <input type="hidden" asp-for="col" value="@j">
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        @Model.Puzzle[i, j]
+                                    }
+                                </td>
+                            }
+                        }
+                    </tr>
+
+                }
+                else
+                {
+                    <tr>
+                        @for (int j = 0; j < 9; j++)
+                        {
+                            if ((j + 1) % 3 == 0 && j != 8)
+                            {
+                                <td class="SudokuCell" style="border-right-width: 3px">
+                                    @if (Model.Puzzle[i, j] == 0)
+                                    {
+                                        <form>
+                                            <input class="inputCell" type="text" asp-for="cell" value="" onchange="this.form.submit();" />
+                                            <input type="hidden" asp-for="row" value="@i">
+                                            <input type="hidden" asp-for="col" value="@j">
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        @Model.Puzzle[i, j]
+                                    }
+                                </td>
+                            }
+                            else
+                            {
+                                <td class="SudokuCell">
+                                    @if (Model.Puzzle[i, j] == 0)
+                                    {
+                                        <form>
+                                            <input class="inputCell" type="text" asp-for="cell" value="" onchange="this.form.submit();" />
+                                            <input type="hidden" asp-for="row" value="@i">
+                                            <input type="hidden" asp-for="col" value="@j">
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        @Model.Puzzle[i, j]
+                                    }
+                                </td>
+                            }
+                        }
+                    </tr>
+                }
+            }
+
+        </table>
+        <div style=" width: 450px; margin: 5px auto; display: block;">
+            <span asp-validation-for="cell" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<div class="block">
+    <form method="post">
+        <div class="center">
+            <h5>Player Name</h5>
+        </div>
+        <div class="center">
+            <input type="text" asp-for="PlayerName" placeholder="@Model.PlayerName" style="text-align: center" />
+            <div>
+                <span asp-validation-for="PlayerName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="flex top-margin">
+            <div><button class="btn level" type="submit" asp-route-Level="easy">Easy</button></div>
+            <div><button class="btn level" type="submit" asp-route-Level="medium">Medium</button></div>
+            <div><button class="btn level" type="submit" asp-route-Level="hard">Hard</button></div>
+            <div><button class="btn level" type="submit" asp-route-Level="insane">Insane</button></div>
+        </div>
+    </form>
+</div>
+<div class="block">
+    <h5 style="text-align: center; padding-bottom: 30px;">About Sudoku</h5>
+    <p>Sudoku is a logic-based, combinatorial number-placement puzzle. In classic Sudoku, the objective is to fill a 9 × 9 grid with digits so that each column, each row, and each of the nine 3 × 3 subgrids that compose the grid (also called "boxes", "blocks", or "regions") contain all of the digits from 1 to 9. </p>
+    <p>The Sudoku story began in 1783 when Leonhard Euler, a Swiss mathematician, devised 'Latin Squares', which he described as 'a new kind of magic squares'. Euler had come up with a grid in which every number or sym bol appears once in each row or column. More than two centuries later, the difference for Sudoku players is that the grid is subdivided into blocks of nine.</p>
+</div>
+            <!-- <img src="file:///Users/migleczigergo/Projects/Sudoku/Math%20Small.png" alt="pic"/> Not allowed to load the resource -->
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }
